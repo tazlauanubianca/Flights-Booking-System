@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/search_best" method="POST">
+<div class="container p-3 my-3 bg-dark text-white form-group">
+    <h2>Flight details</h2>
+    <hr/>
+    <div class="row">
+    <div class="col">
+        <label for="from"><h4>From</h4></label>
+        <input type="text" name="from" class="form-control" placeholder="Departure airport or airport code.">
+    </div>
+    <div class="col">
+        <h4><label for="dep_date">Date</label></h4>
+        <input type="date" name="dep_date" class="form-control">
+        
+    </div>
+    <div class="col">
+        <h4><label for="pass_class">Travel class</label></h4>
+            <div class="form-check-inline">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="pass_class" value="1">1st
+            </label>
+            </div>
+            <div class="form-check-inline">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="pass_class" value="2" checked>2nd
+            </label>
+            </div>
+    </div>
+    </div>
+</div>
+
+
+<div class="container p-3 my-3 bg-light text-white text-center">
+<button type="submit" class="btn btn-primary"><h3><strong>Search</strong></h3></input>
+</div>
+</form>
+</div>
+{{super()}}
+{% endblock %}

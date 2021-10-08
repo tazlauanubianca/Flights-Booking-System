@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/search" method="POST">
+<div class="container p-3 my-3 bg-dark text-white form-group">
+    <h2>Flight details</h2>
+    <hr/>
+    <div class="row">
+    <div class="col">
+        <label for="from"><h4>From</h4></label>
+        <input type="text" name="from" class="form-control" placeholder="Departure airport or airport code.">
+        <label for="to"><h4>To</h4></label>
+        <input type="text" name="to" class="form-control" placeholder="Arrival airport or airport code.">
+    </div>
+        
+    <div class="col">
+        <h4><label for="dep_date">Date</label></h4>
+        <input type="date" name="dep_date" class="form-control">
+        
+        <h4><label for="dep_time">Departure at</label></h4>
+        <input type="time" name="dep_time" class="form-control">
+    </div>
+    </div>
+</div>
+
+<div id="passengers" class="form-group">
+    <div class="container p-3 my-3 bg-dark text-white form-group" id="passenger">
+        <h2>Passenger</h2>
+        <hr/>
+        <div class="row">
+        <div class="col">
+            <h4><label for="pass_name">Name</label></h4>
+            <input type="text" name="pass_name" class="form-control" placeholder="Anne Smith">
+            <h4><label for="pass_passport">Passport number</label></h4>
+            <input type="text" name="pass_passport" class="form-control" placeholder="00-000-00">
+        </div>
+            
+        <div class="col">
+            <h4><label for="pass_birthdate">Birth Date</label></h4>
+            <input type="date" name="pass_birthdate" class="form-control">
+            
+            <h4><label for="pass_class">Travel class</label></h4>
+            <div class="form-check-inline">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="pass_class" value="1">1st
+            </label>
+            </div>
+            <div class="form-check-inline">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="pass_class" value="2" checked>2nd
+            </label>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container p-3 my-3 bg-light text-white text-center">
+<button type="submit" class="btn btn-primary"><h3><strong>Search</strong></h3></input>
+</div>
+</form>
+</div>
+{{super()}}
+{% endblock %}

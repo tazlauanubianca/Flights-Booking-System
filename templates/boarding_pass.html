@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+.outside_table {
+  border: 1px solid black;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(+50%, +50%);
+}
+td, th {
+  padding: 8px;
+  text-align: center;
+}
+td {
+  font-size: 14pt;
+}
+th {
+  font-size: 18pt;
+}
+</style>
+<div id="boarding_pass" class="container">
+<table class="outside_table">
+<tr>
+  <td>
+    <h1>Boarding pass</h1>
+    <table>
+    <tr>
+      <th>Name</th>
+      <th>Passport no.</th>
+      <th>Airline</th>
+    </tr>
+    <tr>
+      <td>{{name}}</td>
+      <td>{{passport_no}}</td>
+      <td>{{airline_name}}</td>
+    </tr>
+  <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Seat</th>
+  </tr>
+    <tr>
+      <td>{{date}}</td>
+      <td>{{time}}</td>
+      <td>{{seat}}</td>
+    </tr>
+  </table></td>
+    <td><img src="{{qrcode(base_url + '/' + url_for('boarding_pass', seat_id=seat_id, person_id=person_id))}}" width="240px" alt="QR code"></td>
+</tr>
+</table>
+</div>
+{% endblock %}
